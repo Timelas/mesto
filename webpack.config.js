@@ -17,7 +17,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, './dist'),
     open: true,
     compress: true,
-    port: 8080
+    port: 5000
   },
   module: {
     rules: [{
@@ -50,4 +50,4 @@ module.exports = {
     new MiniCssExtractPlugin(),
 
   ]
-}
+} 

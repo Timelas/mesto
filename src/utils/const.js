@@ -1,5 +1,4 @@
 export {
-  initialCards,
   validationConfig,
   openPopupEditProfileButton,
   openPopupAddCardButton,
@@ -14,7 +13,15 @@ export {
   popupEditProfileSelector,
   popupAddCardSelector,
   profileNameSelector,
-  profileDescriptionSelector
+  profileDescriptionSelector,
+  deletePopupSelector,
+  userId,
+  popupAvatarSelector,
+  profileAvatarInput,
+  formAvatar,
+  editAvatarButton,
+  editAvatarButtonSelector,
+  avatarButton
 }
 
 const popupImageSelector = '.popup-image';
@@ -33,6 +40,16 @@ const formElementSave = popupEditProfile.querySelector('.popup__save');
 const nameInput = formElementSave.querySelector('.popup__input_string_name');
 const jobInput = formElementSave.querySelector('.popup__input_string_subheading');
 const formElementAdd = popupAddCard.querySelector('.popup__create');
+
+const deletePopupSelector = '.popup-delete-card';
+const userId = 'ef4211d4592ed11607c85881';
+const popupAvatar = document.querySelector('.popup-avatar')
+const popupAvatarSelector = '.popup-avatar';
+const profileAvatarInput = popupAvatar.querySelector('.popup__input_string_link-avatar')
+const formAvatar = popupAvatar.querySelector('.popup__avatar')
+const editAvatarButton = document.querySelector('.profile__avatar-edit')
+const editAvatarButtonSelector = '.profile__avatar-edit';
+const avatarButton = popupAvatar.querySelector('.popup__button')
 
 const validationConfig = {
   formSelector: '.popup__form',
