@@ -67,7 +67,7 @@ export default class Api {
       .then(this._checkAnswer)
     }
 
-    editAvatar() {
+    editAvatar(url) {
       return fetch(`${this._baseUrl}/users/me/avatar`, {
         method: 'PATCH',
         headers: this._headers,

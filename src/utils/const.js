@@ -20,8 +20,7 @@ export {
   profileAvatarInput,
   formAvatar,
   editAvatarButton,
-  editAvatarButtonSelector,
-  avatarButton
+  formAvatarSelector
 }
 
 const popupImageSelector = '.popup-image';
@@ -43,13 +42,12 @@ const formElementAdd = popupAddCard.querySelector('.popup__create');
 
 const deletePopupSelector = '.popup-delete-card';
 const userId = 'ef4211d4592ed11607c85881';
-const popupAvatar = document.querySelector('.popup-avatar')
+const popupAvatar = document.querySelector('.popup-avatar');
 const popupAvatarSelector = '.popup-avatar';
-const profileAvatarInput = popupAvatar.querySelector('.popup__input_string_link-avatar')
-const formAvatar = popupAvatar.querySelector('.popup__avatar')
-const editAvatarButton = document.querySelector('.profile__avatar-edit')
-const editAvatarButtonSelector = '.profile__avatar-edit';
-const avatarButton = popupAvatar.querySelector('.popup__button')
+const profileAvatarInput = popupAvatar.querySelector('.popup__input_string_link-avatar');
+const formAvatar = popupAvatar.querySelector('.popup__avatar');
+const formAvatarSelector = '.popup__avatar';
+const editAvatarButton = document.querySelector('.profile__avatar-edit');
 
 const validationConfig = {
   formSelector: '.popup__form',

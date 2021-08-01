@@ -29,8 +29,7 @@ import {
   profileAvatarInput,
   formAvatar,
   editAvatarButton,
-  editAvatarButtonSelector,
-  avatarButton
+  formAvatarSelector
  } from '../utils/const.js';
 
  const api = new Api({
@@ -73,16 +72,6 @@ function createCard(item) {
   return cardElement;
 }
 
-// function submitAddCard(value) {
-//   const inputTitle = value.title;
-//   const inputLink = value.link;
-//   const values = {name: inputTitle, link: inputLink};
-//   const card = createCard(values);
-//   cardContainer.setItem(card);
-//   formElementAdd.reset();
-//   popupAddCardForm.close();
-// }
-
  const popupWithImage = new PopupWithImage(popupImageSelector, photoPopupSelector, subtitlePopupSelector);
  popupWithImage.setEventListeners();
 
@@ -118,8 +107,7 @@ function createCard(item) {
 
  const popupEditAvatar = new PopupWithForm(popupAvatarSelector, () => {
   popupEditAvatar.renderLoading(true)
-  
-  api.editAvatar(profileAvatarInput.value)
+    api.editAvatar(profileAvatarInput.value)
     .then((res) => {
       userInfo.setUserInfo(res)
       popupEditAvatar.close()
@@ -167,8 +155,7 @@ const deleteConfirm = (evt, card) => {
 
   editAvatarButton.addEventListener('click', () => {
     popupEditAvatar.open()
-    avatarValidate.clearInputError(avatarButton)
-    avatarValidate.disabledButton(avatarButton)
+    avatarValidate.clearInputError()
   })
 
 const cardContainer = new Section({
@@ -178,12 +165,13 @@ const cardContainer = new Section({
   }
 }, elementsListSelector);
 
-const userInfo = new UserInfo({ userName: profileNameSelector, userDescription: profileDescriptionSelector });
+const userInfo = new UserInfo({ userName: profileNameSelector, userDescription: profileDescriptionSelector, profileAvatars:formAvatarSelector });
 openPopupEditProfileButton.addEventListener('click', function () {
   popupEditProfileForm.open();
   const infoProfile = userInfo.getUserInfo();
   nameInput.value = infoProfile.name;
   jobInput.value = infoProfile.description;
+  console.log(profileAvatars);
   profileValidate.clearInputError();
   profileValidate.toggleButton();
   });
