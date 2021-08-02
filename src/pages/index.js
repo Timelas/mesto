@@ -29,7 +29,8 @@ import {
   profileAvatarInput,
   formAvatar,
   editAvatarButton,
-  formAvatarSelector
+  formAvatarSelector,
+  avatarSelector
  } from '../utils/const.js';
 
  const api = new Api({
@@ -165,13 +166,12 @@ const cardContainer = new Section({
   }
 }, elementsListSelector);
 
-const userInfo = new UserInfo({ userName: profileNameSelector, userDescription: profileDescriptionSelector, profileAvatars:formAvatarSelector });
+const userInfo = new UserInfo({ userName: profileNameSelector, userDescription: profileDescriptionSelector, profileAvatars:avatarSelector });
 openPopupEditProfileButton.addEventListener('click', function () {
   popupEditProfileForm.open();
   const infoProfile = userInfo.getUserInfo();
   nameInput.value = infoProfile.name;
   jobInput.value = infoProfile.description;
-  console.log(profileAvatars);
   profileValidate.clearInputError();
   profileValidate.toggleButton();
   });

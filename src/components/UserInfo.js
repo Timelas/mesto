@@ -1,23 +1,3 @@
-// export default class UserInfo {
-//     constructor({ userName, userDescription }) {
-//         this._userName = document.querySelector(userName)
-//         this._userDescription = document.querySelector(userDescription)
-//     }
-
-//     getUserInfo() {
-//         const value = {
-//             name: this._userName.textContent,
-//             description: this._userDescription.textContent
-//         }
-//           return value;
-//     }
-
-//     setUserInfo(value) {
-//         this._userName.textContent = value.name;
-//         this._userDescription.textContent = value.about;
-//     }
-// }
-
 export default class UserInfo {
     constructor({userName, userDescription, profileAvatars}) {
         this._userName = document.querySelector(userName)
@@ -29,7 +9,7 @@ export default class UserInfo {
     getUserInfo() {
         const value = {
             name: this._userName.textContent,
-            about: this._userDescription.textContent,
+            description: this._userDescription.textContent,
             avatar: this._profileAvatars.src
         }
           return value;
@@ -43,8 +23,8 @@ export default class UserInfo {
             this._userDescription.textContent = value.about;
         }
         if (value.avatar) {
+            console.log(value.avatar)
             this._profileAvatars.src = value.avatar;
-            console.log(document.querySelector('.profile__avatar'))
         }
     }
 }

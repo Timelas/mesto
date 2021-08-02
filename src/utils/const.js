@@ -20,7 +20,8 @@ export {
   profileAvatarInput,
   formAvatar,
   editAvatarButton,
-  formAvatarSelector
+  formAvatarSelector,
+  avatarSelector
 }
 
 const popupImageSelector = '.popup-image';
@@ -48,6 +49,7 @@ const profileAvatarInput = popupAvatar.querySelector('.popup__input_string_link-
 const formAvatar = popupAvatar.querySelector('.popup__avatar');
 const formAvatarSelector = '.popup__avatar';
 const editAvatarButton = document.querySelector('.profile__avatar-edit');
+const avatarSelector = '.profile__avatar';
 
 const validationConfig = {
   formSelector: '.popup__form',
