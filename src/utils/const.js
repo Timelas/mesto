@@ -15,12 +15,10 @@ export {
   profileNameSelector,
   profileDescriptionSelector,
   deletePopupSelector,
-  userId,
   popupAvatarSelector,
   profileAvatarInput,
   formAvatar,
   editAvatarButton,
-  formAvatarSelector,
   avatarSelector
 }
 
@@ -42,12 +40,10 @@ const jobInput = formElementSave.querySelector('.popup__input_string_subheading'
 const formElementAdd = popupAddCard.querySelector('.popup__create');
 
 const deletePopupSelector = '.popup-delete-card';
-const userId = 'ef4211d4592ed11607c85881';
 const popupAvatar = document.querySelector('.popup-avatar');
 const popupAvatarSelector = '.popup-avatar';
 const profileAvatarInput = popupAvatar.querySelector('.popup__input_string_link-avatar');
 const formAvatar = popupAvatar.querySelector('.popup__avatar');
-const formAvatarSelector = '.popup__avatar';
 const editAvatarButton = document.querySelector('.profile__avatar-edit');
 const avatarSelector = '.profile__avatar';
 

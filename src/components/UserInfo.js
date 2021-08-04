@@ -23,7 +23,6 @@ export default class UserInfo {
             this._userDescription.textContent = value.about;
         }
         if (value.avatar) {
-            console.log(value.avatar)
             this._profileAvatars.src = value.avatar;
         }
     }

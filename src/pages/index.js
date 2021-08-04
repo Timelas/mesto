@@ -24,14 +24,15 @@ import {
   profileNameSelector,
   profileDescriptionSelector,
   deletePopupSelector,
-  userId,
   popupAvatarSelector,
   profileAvatarInput,
   formAvatar,
   editAvatarButton,
-  formAvatarSelector,
   avatarSelector
  } from '../utils/const.js';
+
+export {userId}
+ let userId;
 
  const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-26',
@@ -44,6 +45,7 @@ import {
 Promise.all([api.getUserInfo(), api.getInitialCards()])
 .then(([value, items]) => {
   const reverse = items.reverse()
+  userId = value._id;
   userInfo.setUserInfo(value)
   cardContainer.renderedItems(reverse)
 })
@@ -68,7 +70,7 @@ function createCard(item) {
      handleCardDelete: () => {
       popupWithSubmit.open(card)
     }
-  }, userId, item._id);
+  }, item._id);
   const cardElement = card.generateCard();
   return cardElement;
 }
@@ -129,6 +131,7 @@ popupWithSubmit.setEventListeners()
 
 const deleteConfirm = (evt, card) => {
   evt.preventDefault();
+  popupWithSubmit.renderLoading(true)
   api.deleteCard(card.getIdCard())
     .then( res => {
       card.deleteCard()
@@ -136,7 +139,10 @@ const deleteConfirm = (evt, card) => {
     })
     .catch((err) => {
     console.log(err);
-  });
+  })
+  .finally(() => {
+    popupWithSubmit.renderLoading(false)
+})
 }
 
  const profileValidate = new FormValidator(validationConfig, formElementSave);

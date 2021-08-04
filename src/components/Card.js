@@ -1,5 +1,7 @@
+import {userId} from '../pages/index.js'
+
 export default class Card {
-  constructor(data, cardSelector, {handleCardClick, likeCardClick, handleCardDelete}, userId, cardId) {
+  constructor(data, cardSelector, {handleCardClick, likeCardClick, handleCardDelete}, cardId) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;

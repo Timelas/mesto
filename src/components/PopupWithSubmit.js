@@ -20,4 +20,12 @@ export default class PopupWithSubmit extends Popup {
       super.open();
       this._card = card;
   }
+
+  renderLoading(loading, loadingMessage='Удаление...') {
+    if(loading) {
+        this._popupSubmitButton.textContent = loadingMessage
+    } else {
+        this._popupSubmitButton.textContent = this._submitButtonText
+    }
+  }
 }
