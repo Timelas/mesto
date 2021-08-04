@@ -14,4 +14,4 @@
 *разбитие кода на классы.
 *работа с сервером.
 
-https://timelas.github.io/mesto/index.html
+https://timelas.github.io/mesto
